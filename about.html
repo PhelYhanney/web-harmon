@@ -10,13 +10,13 @@
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
-	<meta name="author" content="Untree.co">
+
+	<meta name="author" content="Harmon World LLC">
 	<link rel="shortcut icon" href="favicon.png">
 
-	<meta name="description" content="" />
-	<meta name="keywords" content="bootstrap, bootstrap5" />
-	
+	<meta name="description" content="Learn about Harmon World LLC — a family-owned timber and logging company in Missouri. Meet our director and discover our commitment to professional forestry services." />
+	<meta name="keywords" content="Harmon World LLC, logging company, timber, Missouri, about us, Daniel Turner" />
+
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Brygada+1918:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;700&display=swap" rel="stylesheet">
@@ -30,8 +30,269 @@
 	<link rel="stylesheet" href="css/glightbox.min.css">
 	<link rel="stylesheet" href="css/style.css">
 
+	<style>
+		/* ── About Page Specific Styles ── */
 
-	<title>Sterial &mdash; Free Bootstrap 5 Website Template by Untree.co </title>
+		/* Company info section */
+		.about-company-section {
+			padding: 80px 0;
+			background: #fff;
+		}
+		.about-company-section .section-label {
+			display: inline-block;
+			font-size: 0.78rem;
+			font-weight: 700;
+			letter-spacing: 0.22em;
+			text-transform: uppercase;
+			color: #f17945;
+			border-left: 3px solid #f17945;
+			padding-left: 12px;
+			margin-bottom: 18px;
+		}
+		.about-company-section h2.section-title {
+			font-family: 'Brygada 1918', serif;
+			font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+			font-weight: 700;
+			color: #1a1a1a;
+			line-height: 1.2;
+			margin-bottom: 24px;
+		}
+		.about-company-section p {
+			color: #444;
+			font-size: 1.02rem;
+			line-height: 1.8;
+			text-align: justify;
+		}
+		.about-stat-card {
+			border-left: 4px solid #f17945;
+			padding: 18px 24px;
+			background: #faf9f7;
+			margin-bottom: 20px;
+			transition: box-shadow 0.2s ease;
+		}
+		.about-stat-card:hover {
+			box-shadow: 4px 4px 0 #f17945;
+		}
+		.about-stat-card .stat-number {
+			font-family: 'Brygada 1918', serif;
+			font-size: 2.4rem;
+			font-weight: 700;
+			color: #f17945;
+			line-height: 1;
+		}
+		.about-stat-card .stat-label {
+			font-size: 0.85rem;
+			color: #666;
+			letter-spacing: 0.08em;
+			text-transform: uppercase;
+			margin-top: 4px;
+		}
+		.values-grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 16px;
+			margin-top: 32px;
+		}
+		.value-item {
+			display: flex;
+			align-items: flex-start;
+			gap: 14px;
+		}
+		.value-item .value-icon {
+			flex-shrink: 0;
+			width: 42px;
+			height: 42px;
+			background: #f17945;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: #fff;
+			font-size: 1.1rem;
+		}
+		.value-item h5 {
+			font-weight: 700;
+			font-size: 0.95rem;
+			color: #1a1a1a;
+			margin-bottom: 4px;
+		}
+		.value-item p {
+			font-size: 0.87rem;
+			color: #666;
+			margin: 0;
+			text-align: left;
+		}
+
+		/* Forest texture strip between sections */
+		.section-divider {
+			position: relative;
+			height: 220px;
+			overflow: hidden;
+			background: #1a1a1a;
+		}
+		.section-divider img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			opacity: 0.45;
+		}
+		.section-divider .divider-content {
+			position: absolute;
+			inset: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.section-divider .divider-quote {
+			font-family: 'Brygada 1918', serif;
+			font-size: clamp(1.1rem, 2.5vw, 1.7rem);
+			color: #fff;
+			text-align: center;
+			font-style: italic;
+			max-width: 700px;
+			padding: 0 24px;
+			line-height: 1.5;
+		}
+		.section-divider .divider-quote span {
+			color: #f17945;
+			font-style: normal;
+		}
+
+		/* Director section */
+		.director-section {
+			padding: 90px 0;
+			background: #faf9f7;
+		}
+		.director-photo-wrap {
+			position: relative;
+		}
+		.director-photo-wrap .photo-frame {
+			position: relative;
+			display: inline-block;
+			width: 100%;
+		}
+		.director-photo-wrap .photo-frame::before {
+			content: '';
+			position: absolute;
+			top: 18px;
+			left: 18px;
+			right: -18px;
+			bottom: -18px;
+			border: 3px solid #f17945;
+			z-index: 0;
+		}
+		.director-photo-wrap .photo-frame img {
+			position: relative;
+			z-index: 1;
+			width: 100%;
+			height: 520px;
+			object-fit: cover;
+			object-position: top center;
+			display: block;
+		}
+		.director-badge {
+			position: absolute;
+			bottom: -28px;
+			right: -10px;
+			z-index: 2;
+			background: #f17945;
+			color: #fff;
+			padding: 14px 22px;
+		}
+		.director-badge .badge-title {
+			font-size: 0.72rem;
+			letter-spacing: 0.15em;
+			text-transform: uppercase;
+			font-weight: 700;
+			opacity: 0.85;
+		}
+		.director-badge .badge-cert {
+			font-family: 'Brygada 1918', serif;
+			font-size: 1rem;
+			font-weight: 700;
+			margin-top: 2px;
+		}
+
+		.director-info .section-label {
+			display: inline-block;
+			font-size: 0.78rem;
+			font-weight: 700;
+			letter-spacing: 0.22em;
+			text-transform: uppercase;
+			color: #f17945;
+			border-left: 3px solid #f17945;
+			padding-left: 12px;
+			margin-bottom: 18px;
+		}
+		.director-info h2 {
+			font-family: 'Brygada 1918', serif;
+			font-size: clamp(2rem, 3.5vw, 3rem);
+			font-weight: 700;
+			color: #1a1a1a;
+			line-height: 1.15;
+			margin-bottom: 6px;
+		}
+		.director-info .director-title {
+			font-size: 1rem;
+			color: #f17945;
+			font-weight: 700;
+			letter-spacing: 0.08em;
+			text-transform: uppercase;
+			margin-bottom: 28px;
+		}
+		.director-info p {
+			color: #444;
+			font-size: 1.01rem;
+			line-height: 1.8;
+			text-align: justify;
+			margin-bottom: 16px;
+		}
+		.director-credentials {
+			margin-top: 32px;
+			display: flex;
+			flex-wrap: wrap;
+			gap: 12px;
+		}
+		.credential-pill {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			background: #fff;
+			border: 1px solid #e0ddd8;
+			padding: 10px 18px;
+			font-size: 0.88rem;
+			font-weight: 600;
+			color: #1a1a1a;
+			border-left: 3px solid #f17945;
+		}
+		.credential-pill .icon-check {
+			color: #f17945;
+			font-size: 1rem;
+		}
+
+		/* Responsive */
+		@media (max-width: 991px) {
+			.director-photo-wrap .photo-frame::before {
+				right: 0;
+			}
+			.director-photo-wrap .photo-frame img {
+				height: 380px;
+			}
+			.director-badge {
+				right: 0;
+				bottom: 0;
+			}
+			.values-grid {
+				grid-template-columns: 1fr;
+			}
+		}
+		@media (max-width: 575px) {
+			.director-photo-wrap {
+				margin-bottom: 60px;
+			}
+		}
+	</style>
+
+	<title>About Us &mdash; Harmon World, LLC</title>
 </head>
 <body>
 
@@ -50,34 +311,31 @@
 			<div class="site-navigation">
 				<div class="row">
 					<div class="col-6 col-lg-3">
-						<a href="index.html" class="logo m-0 float-start">Sterial</a>
+						<a href="index.html" class="logo m-0 float-start"><span style="color: orangered;">Harmon</span><span>World</span><span style="color: orangered;">.LLC</span></a>
 					</div>
 					<div class="col-lg-6 d-none d-lg-inline-block text-center nav-center-wrap">
-						<ul class="js-clone-nav  text-center site-menu p-0 m-0">
+						<ul class="js-clone-nav text-center site-menu p-0 m-0">
 							<li><a href="index.html">Home</a></li>
-							<li class="active"><a href="about.html">About us</a></li>
+							<li class="active"><a href="about.html">About Us</a></li>
 							<li class="has-children">
-								<a href="#">Dropdown</a>
+								<a href="#">Services</a>
 								<ul class="dropdown">
-									<li><a href="#">Menu One</a></li>
-									<li class="has-children">
-										<a href="#">Menu Two</a>
-										<ul class="dropdown">
-											<li><a href="#">Sub Menu One</a></li>
-											<li><a href="#">Sub Menu Two</a></li>
-											<li><a href="#">Sub Menu Three</a></li>
-										</ul>
-									</li>
-									<li><a href="#">Menu Three</a></li>
+									<li><a href="logging.html">Logging</a></li>
+									<hr>
+									<li><a href="timber-stand-improvement-tsi.html">Timber Stand Improvement (TSI)</a></li>
+									<hr>
+									<li><a href="timber-management.html">Timber Management</a></li>
+									<hr>
+									<li><a href="timber-purchasing.html">Timber Purchasing</a></li>
 								</ul>
 							</li>
-							<li><a href="nfpa-certification.html">Services</a></li>
+							<li><a href="nfpa-certification.html">NFPA Certification</a></li>
+							<li><a href="timber-tracker.html">Timber Tracker</a></li>
 							<li><a href="#">Blog</a></li>
-
 						</ul>
 					</div>
 					<div class="col-6 col-lg-3 text-lg-end">
-						<ul class="js-clone-nav d-none d-lg-inline-block text-end site-menu ">
+						<ul class="js-clone-nav d-none d-lg-inline-block text-end site-menu">
 							<li class="cta-button"><a href="contact.html">Contact Us</a></li>
 						</ul>
 
@@ -87,387 +345,320 @@
 					</div>
 				</div>
 			</div>
-			
+
 		</div>
 	</nav>
 
-	
-
+	<!-- ─── HERO ─── -->
 	<div class="hero overlay">
-
 		<div class="img-bg rellax">
-			<img src="images/hero_1.jpg" alt="Image" class="img-fluid">
+			<img src="images/tl13.jpg" alt="Harmon World forest background" class="img-fluid">
 		</div>
-
 		<div class="container">
 			<div class="row align-items-center justify-content-start">
-				<div class="col-lg-5">
-
+				<div class="col-lg-6">
 					<h1 class="heading" data-aos="fade-up">About Us</h1>
-					<p class="mb-5" data-aos="fade-up">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+					<p class="mb-5" data-aos="fade-up" data-aos-delay="100">
+						Harmon World, LLC is a family-owned logging company with generations of expertise in timber cutting, forest management, and sustainable land stewardship across Missouri.
+					</p>
+					<div data-aos="fade-up" data-aos-delay="200">
+						<a href="contact.html" class="btn btn-primary me-3">Get In Touch</a>
+						<a href="#company-info" class="btn btn-outline-light">Our Story</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-					<div data-aos="fade-up">
-						<a href="https://www.youtube.com/watch?v=5n-e6lOhVq0" class="play-button align-items-center d-flex glightbox3" >
-							<span class="icon-button me-3">
-								<span class="icon-play"></span>
-							</span>
-							<span class="caption">Watch Video</span>
+	<!-- ─── COMPANY INFO ─── -->
+	<div class="about-company-section" id="company-info">
+		<div class="container">
+			<div class="row align-items-center justify-content-between g-5">
+
+				<!-- Left: Image grid -->
+				<div class="col-lg-5 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+					<div class="image-stack mb-5 mb-lg-0">
+						<div class="image-stack__item image-stack__item--bottom" data-aos="fade-up">
+							<img src="images/truck.jpg" alt="Harmon World logging truck" class="img-fluid rellax">
+						</div>
+						<div class="image-stack__item image-stack__item--top" data-aos="fade-up" data-aos-delay="150" data-rellax-percentage="0.5">
+							<img src="images/tractor.jpg" alt="Harmon World equipment at work" class="img-fluid">
+						</div>
+					</div>
+				</div>
+
+				<!-- Right: Text content -->
+				<div class="col-lg-6 order-lg-1" data-aos="fade-right">
+					<span class="section-label">Our Story</span>
+					<h2 class="section-title">A Legacy Built in the Forest</h2>
+
+					<p>
+						Harmon World, LLC is an experienced and dedicated logging company servicing clients throughout Missouri. We offer each of our clients high-quality, professional logging services that are individualized to fit their specific logging and forestry needs.
+					</p>
+					<p>
+						Our family-owned logging company has been passed down for generations. We are passionate about providing you with nothing less than exceptional timber cutting services — backed by decades of hands-on experience and a deep respect for the land we work.
+					</p>
+					<p>
+						Whether you need land cleared, hazardous trees removed, forest health improved, or quality timber harvested, our team brings the skill, equipment, and dedication to get the job done right the first time.
+					</p>
+
+					<!-- Stats row -->
+					<div class="row mt-4 g-3">
+						<div class="col-sm-4">
+							<div class="about-stat-card">
+								<div class="stat-number">30+</div>
+								<div class="stat-label">Years Experience</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="about-stat-card">
+								<div class="stat-number">NFPA</div>
+								<div class="stat-label">Certified</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="about-stat-card">
+								<div class="stat-number">100%</div>
+								<div class="stat-label">Professional</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<!-- Values grid -->
+			<div class="row mt-5 pt-4" data-aos="fade-up" data-aos-delay="100">
+				<div class="col-12 mb-4">
+					<span class="section-label">Our Values</span>
+					<h2 class="section-title" style="font-size: clamp(1.5rem, 2.5vw, 2rem);">What Drives Everything We Do</h2>
+				</div>
+				<div class="col-lg-3 col-sm-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+					<div class="value-item">
+						<div class="value-icon">
+							<span class="icon-check"></span>
+						</div>
+						<div>
+							<h5>Integrity</h5>
+							<p>We operate with honesty and transparency in every client relationship and every acre we manage.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6 mb-4" data-aos="fade-up" data-aos-delay="150">
+					<div class="value-item">
+						<div class="value-icon">
+							<span class="icon-star-o"></span>
+						</div>
+						<div>
+							<h5>Quality</h5>
+							<p>Every job is executed with precision equipment, certified professionals, and uncompromising standards.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+					<div class="value-item">
+						<div class="value-icon">
+							<span class="icon-leaf"></span>
+						</div>
+						<div>
+							<h5>Stewardship</h5>
+							<p>We are committed to responsible forestry practices that support long-term woodland health.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6 mb-4" data-aos="fade-up" data-aos-delay="250">
+					<div class="value-item">
+						<div class="value-icon">
+							<span class="icon-users"></span>
+						</div>
+						<div>
+							<h5>Community</h5>
+							<p>As a family business, we take pride in serving our neighbors and building lasting relationships.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- ─── DIVIDER QUOTE ─── -->
+	<div class="section-divider">
+		<img src="images/tl13.jpg" alt="Forest background">
+		<div class="divider-content">
+			<p class="divider-quote" data-aos="fade-up">
+				"We don't just cut trees — we manage land, build futures, and honor the trust<br>
+				<span>landowners place in us every single day.</span>"
+			</p>
+		</div>
+	</div>
+
+	<!-- ─── DIRECTOR SECTION ─── -->
+	<div class="director-section" id="director">
+		<div class="container">
+
+			<div class="row align-items-center g-5">
+
+				<!-- Photo column -->
+				<div class="col-lg-5 mb-5 mb-lg-0" data-aos="fade-right">
+					<div class="director-photo-wrap">
+						<div class="photo-frame">
+							<img src="images/man.jpg" alt="Daniel Turner — Director, Harmon World LLC">
+							<div class="director-badge">
+								<div class="badge-title">Missouri Master Logger</div>
+								<div class="badge-cert">Certified &amp; Licensed</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Info column -->
+				<div class="col-lg-6 offset-lg-1 director-info" data-aos="fade-left" data-aos-delay="100">
+					<span class="section-label">Meet Our Director</span>
+					<h2>Daniel Turner</h2>
+					<p class="director-title">Director &mdash; Harmon World, LLC</p>
+
+					<p>
+						Daniel Turner is the driving force behind Harmon World, LLC. A certified Missouri Master Logger recognized by the Missouri Logging Council, Daniel brings decades of firsthand experience in timber harvesting, forest management, and land stewardship to every project he oversees.
+					</p>
+					<p>
+						Under Daniel's leadership, Harmon World, LLC has built a reputation for reliability, professionalism, and an unwavering commitment to quality. He personally ensures that each client receives a service tailored to their land's specific needs — from the initial evaluation to the final cleanup.
+					</p>
+					<p>
+						As a proud member of the American Loggers Council, Daniel stays current with industry best practices and safety standards, including maintaining full NFPA certification to protect both clients and crew on every job site.
+					</p>
+
+					<!-- Credentials -->
+					<div class="director-credentials">
+						<div class="credential-pill">
+							<span class="icon-check"></span>
+							Missouri Master Logger
+						</div>
+						<div class="credential-pill">
+							<span class="icon-check"></span>
+							Missouri Logging Council Certified
+						</div>
+						<div class="credential-pill">
+							<span class="icon-check"></span>
+							American Loggers Council Member
+						</div>
+						<div class="credential-pill">
+							<span class="icon-check"></span>
+							NFPA Certified
+						</div>
+					</div>
+
+					<div class="mt-5">
+						<a href="contact.html" class="btn btn-primary me-3">Contact Daniel</a>
+						<a href="nfpa-certification.html" class="btn btn-outline-primary">View Certifications</a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- ─── CTA STRIP ─── -->
+	<div class="section service-section-1">
+		<div class="container">
+			<div class="row align-items-center justify-content-between">
+				<div class="col-lg-7 mb-4 mb-lg-0" data-aos="fade-up">
+					<h2 class="heading mb-2">Ready to Work With Us?</h2>
+					<p class="mb-0" style="color: #555;">Contact Harmon World, LLC today for a free evaluation assessment. We'll provide you with an estimate of timber worth and walk you through our service options.</p>
+				</div>
+				<div class="col-lg-4 text-lg-end" data-aos="fade-up" data-aos-delay="100">
+					<a href="contact.html" class="btn btn-primary me-2">Get a Free Evaluation</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- ─── FOOTER ─── -->
+	<div class="site-footer py-5" style="color: gray;">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-lg-1">
+					<div class="widget">
+						<a href="index.html">
+							<h3>HOME<span class="text-primary">.</span></h3>
 						</a>
 					</div>
 				</div>
 
-				
-			</div>
-		</div>
-
-		
-	</div>
-
-
-	<div class="section section-2">
-		<div class="container">
-			<div class="row align-items-center justify-content-between">
-				<div class="col-lg-6 order-lg-2 mb-5 mb-lg-0">
-					<div class="image-stack mb-5 mb-lg-0">
-						<div class="image-stack__item image-stack__item--bottom" data-aos="fade-up"  >
-							<img src="images/img_v_1.jpg" alt="Image" class="img-fluid rellax ">
-						</div>
-						<div class="image-stack__item image-stack__item--top" data-aos="fade-up" data-aos-delay="100"  data-rellax-percentage="0.5">
-							<img src="images/img_v_2.jpg" alt="Image" class="img-fluid">
-						</div>
-					</div>
-
-				</div>
-				<div class="col-lg-4 order-lg-1">
-
-					<div>
-						<h2 class="heading mb-3" data-aos="fade-up" data-aos-delay="100">Explore All Corners of The World With Us</h2>
-
-						<p data-aos="fade-up" data-aos-delay="200">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-
-						<p data-aos="fade-up" data-aos-delay="300">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-
-						<p class="my-4" data-aos="fade-up" data-aos-delay="300"><a href="#" class="btn btn-primary">Read more</a></p>
-					</div>
-				</div>
-				
-			</div>
-
-		</div>		
-	</div>
-
-	<div class="section service-section-1">
-		<div class="container">
-			<div class="row">
-
-				<div class="col-lg-3 mb-4 mb-lg-0">
-					<div class="heading-content" data-aos="fade-up">
-						<h2>Our <span class="d-block">Philosphy</span></h2>
-						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-						<p class="my-4" data-aos="fade-up" data-aos-delay="300"><a href="#" class="btn btn-primary">View All</a></p>
-					</div>
-				</div>
-				<div class="col-lg-9">
-					<div class="row">
-						<div class="col-6 col-md-6 col-lg-3 mb-4 mb-lg-0" data-aos="fade-up"  data-aos-delay="100">
-							<div class="service-1">
-								<span class="icon">
-									<img src="images/svg/01.svg" alt="Image" class="img-fluid">
-								</span>
-								<div>
-									<h3>Tourism</h3>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-6 col-md-6 col-lg-3 mb-4 mb-lg-0" data-aos="fade-up"  data-aos-delay="200">
-							<div class="service-1">
-								<span class="icon">
-									<img src="images/svg/02.svg" alt="Image" class="img-fluid">
-								</span>
-								<div>
-									<h3>Package Tours</h3>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-6 col-md-6 col-lg-3 mb-4 mb-lg-0" data-aos="fade-up"  data-aos-delay="300">
-							<div class="service-1">
-								<span class="icon">
-									<img src="images/svg/03.svg" alt="Image" class="img-fluid">
-								</span>
-								<div>
-									<h3>Travel Insurance</h3>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-6 col-md-6 col-lg-3 mb-4 mb-lg-0" data-aos="fade-up"  data-aos-delay="400">
-							<div class="service-1">
-								<span class="icon">
-									<img src="images/svg/04.svg" alt="Image" class="img-fluid">
-								</span>
-								<div>
-									<h3>Airport Lounge Access</h3>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</div>
-
-	<div class="section">
-		<div class="container">
-			<div class="row mb-5">
-				<div class="col-lg-6 mx-auto text-center">
-					<div class="heading-content" data-aos="fade-up">
-						<h2 class="heading">Meet Our Team of Experts</h2>
-						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-lg-3">
-					<a href="#" class="person">
-						<img src="images/person_1.jpg" alt="Image" class="img-fluid mb-4">
-						<span class="subheading d-inline-block">CEO, Co-Founder</span>
-						<h3 class="mb-3">John Anderson</h3>
-						<p class="text-muted">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-					</a>
-				</div>
-				<div class="col-lg-3">
-					<a href="#" class="person">
-						<img src="images/person_2.jpg" alt="Image" class="img-fluid mb-4">
-						<span class="subheading d-inline-block">CEO, Co-Founder</span>
-						<h3 class="mb-3">Jane Parkenson</h3>
-						<p class="text-muted">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-					</a>
-				</div>
-				<div class="col-lg-3">
-					<a href="#" class="person">
-						<img src="images/person_3.jpg" alt="Image" class="img-fluid mb-4">
-						<span class="subheading d-inline-block">CEO, Co-Founder</span>
-						<h3 class="mb-3">Kelsey Gutierrez</h3>
-						<p class="text-muted">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-					</a>
-				</div>
-				<div class="col-lg-3">
-					<a href="#" class="person">
-						<img src="images/person_2.jpg" alt="Image" class="img-fluid mb-4">
-						<span class="subheading d-inline-block">CEO, Co-Founder</span>
-						<h3 class="mb-3">Matthew Madron</h3>
-						<p class="text-muted">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-					</a>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="section service-section-1">
-		<div class="container">
-			<div class="row mb-5">
-				<div class="col-lg-6 mx-auto text-center">
-					<div class="heading-content" data-aos="fade-up">
-						<h2 class="heading">Open Positions</h2>
-						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="bg-white p-4 rounded job-position">
-						<div class="row">
-							<div class="col-lg-7">
-								<span class="block subtitle">Design</span>
-								<h2>Product Designer</h2>
-								<div class="d-flex align-items-center">
-									<div class="d-flex align-items-center me-4">
-										<span class="icon-room me-2"></span> <span>Remote</span>
-									</div>
-									<div class="d-flex align-items-center">
-										<span class="icon-clock-o me-2"></span> <span>Fulltime</span>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-5 text-lg-end">
-								<a href="#" class="d-inline-flex align-items-center"><span class="me-2">View Position</span> <span class="icon-link2"></span></a>
-							</div>
-
-						</div> 	
-
-					</div>
-				</div>
-
-				<div class="col-lg-12">
-					<div class="bg-white p-4 rounded job-position">
-						<div class="row">
-							<div class="col-lg-7">
-								<span class="block subtitle">Design</span>
-								<h2>Account Executive</h2>
-								<div class="d-flex align-items-center">
-									<div class="d-flex align-items-center me-4">
-										<span class="icon-room me-2"></span> <span>Remote</span>
-									</div>
-									<div class="d-flex align-items-center">
-										<span class="icon-clock-o me-2"></span> <span>Fulltime</span>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-5 text-lg-end">
-								<a href="#" class="d-inline-flex align-items-center"><span class="me-2">View Position</span> <span class="icon-link2"></span></a>
-							</div>
-
-						</div> 	
-
-					</div>
-				</div>
-
-				<div class="col-lg-12">
-					<div class="bg-white p-4 rounded job-position">
-						<div class="row">
-							<div class="col-lg-7">
-								<span class="block subtitle">Design</span>
-								<h2>Customer Success Manager</h2>
-								<div class="d-flex align-items-center">
-									<div class="d-flex align-items-center me-4">
-										<span class="icon-room me-2"></span> <span>Remote</span>
-									</div>
-									<div class="d-flex align-items-center">
-										<span class="icon-clock-o me-2"></span> <span>Fulltime</span>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-5 text-lg-end">
-								<a href="#" class="d-inline-flex align-items-center"><span class="me-2">View Position</span> <span class="icon-link2"></span></a>
-							</div>
-
-						</div> 	
-
-					</div>
-				</div>
-
-				<div class="col-lg-12">
-					<div class="bg-white p-4 rounded job-position">
-						<div class="row">
-							<div class="col-lg-7">
-								<span class="block subtitle">Design</span>
-								<h2>Engineering Manager</h2>
-								<div class="d-flex align-items-center">
-									<div class="d-flex align-items-center me-4">
-										<span class="icon-room me-2"></span> <span>Remote</span>
-									</div>
-									<div class="d-flex align-items-center">
-										<span class="icon-clock-o me-2"></span> <span>Fulltime</span>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-5 text-lg-end">
-								<a href="#" class="d-inline-flex align-items-center"><span class="me-2">View Position</span> <span class="icon-link2"></span></a>
-							</div>
-
-						</div> 	
-
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="site-footer">
-		<div class="container">
-
-			<div class="row">
-				<div class="col-lg-4">
+				<div class="col-lg-1 ml-auto">
 					<div class="widget">
-						<h3>About Passport<span class="text-primary">.</span> </h3>
-						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-					</div> <!-- /.widget -->
-					<div class="widget">
-						<h3>Connect</h3>
-						<ul class="list-unstyled social">
-							<li><a href="#"><span class="icon-instagram"></span></a></li>
-							<li><a href="#"><span class="icon-twitter"></span></a></li>
-							<li><a href="#"><span class="icon-facebook"></span></a></li>
-							<li><a href="#"><span class="icon-linkedin"></span></a></li>
-							<li><a href="#"><span class="icon-pinterest"></span></a></li>
-							<li><a href="#"><span class="icon-dribbble"></span></a></li>
-						</ul>
-					</div> <!-- /.widget -->
-				</div> <!-- /.col-lg-3 -->
+						<a href="about.html">
+							<h3>ABOUT</h3>
+						</a>
+					</div>
+				</div>
 
-				<div class="col-lg-2 ml-auto">
+				<div class="col-lg-1 ml-auto">
 					<div class="widget">
-						<h3>Links</h3>
-						<ul class="list-unstyled float-left links">
-							<li><a href="#">About us</a></li>
-							<li><a href="#">Services</a></li>
-							<li><a href="#">News</a></li>
-							<li><a href="#">Careers</a></li>
-							<li><a href="#">Contact</a></li>
-						</ul>
-					</div> <!-- /.widget -->
-				</div> <!-- /.col-lg-3 -->
+						<a href="logging.html">
+							<h3>SERVICES</h3>
+						</a>
+					</div>
+				</div>
 
 				<div class="col-lg-2">
 					<div class="widget">
-						<h3>Company</h3>
-						<ul class="list-unstyled float-left links">
-							<li><a href="#">About us</a></li>
-							<li><a href="#">Services</a></li>
-							<li><a href="#">News</a></li>
-							<li><a href="#">Careers</a></li>
-							<li><a href="#">Contact</a></li>
-						</ul>
-					</div> <!-- /.widget -->
-				</div> <!-- /.col-lg-3 -->
-
-
-				<div class="col-lg-3">
-					<div class="widget">
-						<h3>Contact</h3>
-						<address>43 Raymouth Rd. Baltemoer, London 3910</address>
-						<ul class="list-unstyled links mb-4">
-							<li><a href="tel://11234567890">+1(123)-456-7890</a></li>
-							<li><a href="tel://11234567890">+1(123)-456-7890</a></li>
-							<li><a href="mailto:info@mydomain.com">info@mydomain.com</a></li>
-						</ul>
-					</div> <!-- /.widget -->
-				</div> <!-- /.col-lg-3 -->
-
-			</div> <!-- /.row -->
-
-			<div class="row mt-5">
-				<div class="col-12 text-center">
-					<p class="mb-0">Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://untree.co">Untree.co</a> <!-- License information: https://untree.co/license/ -->
-					Distributed By <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
-					</p>
+						<a href="nfpa-certification.html">
+							<h3>NFPA CERTIFICATIONS</h3>
+						</a>
+					</div>
 				</div>
-			</div> <!-- /.container -->
-		</div> <!-- /.site-footer -->
 
-		<!-- Preloader -->
-		<div id="overlayer"></div>
-		<div class="loader">
-			<div class="spinner-border text-primary" role="status">
-				<span class="visually-hidden">Loading...</span>
+				<div class="col-lg-2">
+					<div class="widget">
+						<a href="timber-tracker.html">
+							<h3>TIMBER TRACKER</h3>
+						</a>
+					</div>
+				</div>
+
+				<div class="col-lg-1">
+					<div class="widget">
+						<a href="#">
+							<h3>BLOG</h3>
+						</a>
+					</div>
+				</div>
+
+				<div class="col-lg-2">
+					<div class="widget">
+						<a href="contact.html">
+							<h3>CONTACT US</h3>
+						</a>
+					</div>
+				</div>
 			</div>
+
+			<hr>
+			<p>
+				&copy;<script>document.write(new Date().getFullYear());</script> Harmon World, LLC. All Rights Reserved
+			</p>
+
 		</div>
+	</div>
 
+	<!-- Preloader -->
+	<div id="overlayer"></div>
+	<div class="loader">
+		<div class="spinner-border text-primary" role="status">
+			<span class="visually-hidden">Loading...</span>
+		</div>
+	</div>
 
-		<script src="js/bootstrap.bundle.min.js"></script>
-		<script src="js/tiny-slider.js"></script>
-		<script src="js/aos.js"></script>
-		<script src="js/navbar.js"></script>
-		<script src="js/counter.js"></script>
-		<script src="js/rellax.js"></script>
-		<script src="js/flatpickr.js"></script>
-		<script src="js/glightbox.min.js"></script>
-		<script src="js/custom.js"></script>
-	</body>
-	</html>
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src="js/tiny-slider.js"></script>
+	<script src="js/aos.js"></script>
+	<script src="js/navbar.js"></script>
+	<script src="js/counter.js"></script>
+	<script src="js/rellax.js"></script>
+	<script src="js/flatpickr.js"></script>
+	<script src="js/glightbox.min.js"></script>
+	<script src="js/custom.js"></script>
+</body>
+</html>
